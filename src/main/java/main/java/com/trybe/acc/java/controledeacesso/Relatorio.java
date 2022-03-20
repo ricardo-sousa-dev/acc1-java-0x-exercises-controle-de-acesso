@@ -24,19 +24,19 @@ public class Relatorio {
     double adultosMaioresDouble;
 
     if (menores > 0) {
-      menoresDouble = (menores * 100 / lista.size());
+      menoresDouble = (menores * 100.0 / lista.size());
     } else {
       menoresDouble = 0;
     }
 
     if (adultos > 0) {
-      adultosDouble = (adultos * 100 / lista.size());
+      adultosDouble = (adultos * 100.0 / lista.size());
     } else {
       adultosDouble = 0;
     }
 
     if (adultosMaiores > 0) {
-      adultosMaioresDouble = (adultosMaiores * 100 / lista.size());
+      adultosMaioresDouble = (adultosMaiores * 100.0 / lista.size());
     } else {
       adultosMaioresDouble = 0;
     }
@@ -47,7 +47,7 @@ public class Relatorio {
     System.out.println("Menores: " + menores);
     System.out.println("Adultos: " + adultos);
     System.out.println("Adultos maiores: " + adultosMaiores);
-
+    // https://www.baeldung.com/java-printstream-printf
     System.out.println("----- Percentual -----");
     System.out.printf("Menores: %.2f %n", menoresDouble, "%");
     System.out.printf("Adultos: %.2f %n", adultosDouble, "%");
