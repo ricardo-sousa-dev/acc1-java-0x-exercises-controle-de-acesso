@@ -35,7 +35,7 @@ public class Principal {
             System.out.println("Pessoa cliente menor de idade, catraca liberada!");
           } else if (idade < 50) {
             System.out.println("Pessoa adulta, catraca liberada!");
-          } else if (idade >= 50) {
+          } else {
             System.out.println("Pessoa adulta maior de 50, catraca liberada!");
           }
         } else if (opcao == 2) {

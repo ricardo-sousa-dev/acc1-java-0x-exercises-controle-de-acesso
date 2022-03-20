@@ -1,7 +1,5 @@
 package main.java.com.trybe.acc.java.controledeacesso;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class Relatorio {
@@ -16,21 +14,32 @@ public class Relatorio {
         menores++;
       } else if (lista.get(i) < 50) {
         adultos++;
-      } else if (lista.get(i) >= 50) {
+      } else {
         adultosMaiores++;
       }
     }
 
-    // float menoresFloat = (menores * 100 / lista.size());
-    // float adultosFloat = (adultos * 100 / lista.size());
-    // float adultosMaioresFloat = (adultosMaiores * 100 / lista.size());
+    double menoresDouble;
+    double adultosDouble;
+    double adultosMaioresDouble;
 
-    BigDecimal menoresFloat =
-        new BigDecimal((menores * 100) / lista.size()).setScale(2, RoundingMode.HALF_UP);
-    BigDecimal adultosFloat =
-        new BigDecimal((adultos * 100) / lista.size()).setScale(2, RoundingMode.HALF_UP);
-    BigDecimal adultosMaioresFloat =
-        new BigDecimal((adultosMaiores * 100) / lista.size()).setScale(2, RoundingMode.HALF_UP);
+    if (menores > 0) {
+      menoresDouble = (menores * 100 / lista.size());
+    } else {
+      menoresDouble = 0;
+    }
+
+    if (adultos > 0) {
+      adultosDouble = (adultos * 100 / lista.size());
+    } else {
+      adultosDouble = 0;
+    }
+
+    if (adultosMaiores > 0) {
+      adultosMaioresDouble = (adultosMaiores * 100 / lista.size());
+    } else {
+      adultosMaioresDouble = 0;
+    }
 
     System.out.println("\n");
 
@@ -40,10 +49,10 @@ public class Relatorio {
     System.out.println("Adultos maiores: " + adultosMaiores);
 
     System.out.println("----- Percentual -----");
-    System.out.println("Menores: " + menoresFloat + " %");
-    System.out.println("Adultos: " + adultosFloat + " %");
-    System.out.println("Adultos maiores: " + adultosMaioresFloat + " %");
+    System.out.printf("Menores: %.2f %n", menoresDouble, "%");
+    System.out.printf("Adultos: %.2f %n", adultosDouble, "%");
+    System.out.printf("Adultos maiores: %.2f %n", adultosMaioresDouble, "%");
 
-    System.out.println("\nTOTAL: " + lista.size());
+    System.out.printf("\nTOTAL: " + lista.size());
   }
 }
